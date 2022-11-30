@@ -73,6 +73,6 @@ public class DataHelper {
     }
 
     public static CardInfo getInvalidUser(){
-        return new CardInfo("5555 6666 7777 8888",getValidMonth(),getValidYear(),getValidName(),getCVV());
+        return new CardInfo("5555 6666 7777 8888",getInvalidMonth(),getInvalidYear(),getInvalidName(),getCVV());
     }
 }
