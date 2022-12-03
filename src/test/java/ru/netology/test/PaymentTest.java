@@ -101,4 +101,3 @@ public class PaymentTest {
         Assertions.assertEquals(expected, actual);
     }
 }
-}
