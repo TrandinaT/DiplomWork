@@ -75,4 +75,15 @@ public class DataHelper {
     public static CardInfo getInvalidUser(){
         return new CardInfo("5555 6666 7777 8888",getInvalidMonth(),getInvalidYear(),getInvalidName(),getCVV());
     }
+    public static CardInfo getIncorrectCardNumber(){
+        return new CardInfo("1111 2222 3333 4445",getValidMonth(),getValidYear(),getValidName(),getCVV());
+    }
+
+    public static CardInfo getWrongMonth(){
+        return new CardInfo("1111 2222 3333 4444",getInvalidMonth(),getValidYear(),getValidName(),getCVV());
+    }
+
+    public static CardInfo getWrongYear(){
+        return new CardInfo("1111 2222 3333 4444",getValidMonth(),getInvalidYear(),getValidName(),getCVV());
+    }
 }
