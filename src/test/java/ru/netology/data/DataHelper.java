@@ -24,24 +24,26 @@ public class DataHelper {
         String cvv;
     }
 
-    private static String getValidMonth(){
-        List<String> months = new ArrayList<>();
-        months.add("01");
-        months.add("02");
-        months.add("03");
-        months.add("04");
-        months.add("05");
-        months.add("06");
-        months.add("07");
-        months.add("08");
-        months.add("09");
-        months.add("10");
-        months.add("11");
-        months.add("12");
-
-        Random random = new Random();
-        String month = months.get(random.nextInt(months.size()));
-        return month;
+    public static String getValidMonth(int month) {
+        String value;
+        switch (month) {
+            case 0:
+                value = "";
+                break;
+            case 1:
+                value = String.valueOf(faker.number().numberBetween(10, 12));
+                break;
+            case 2:
+                value = "15";
+                break;
+            case 3:
+                value = "month";
+                break;
+            default:
+                value = "00";
+                break;
+        }
+        return value;
     }
 
     private static String getInvalidMonth(){
@@ -69,14 +71,14 @@ public class DataHelper {
     }
 
     public static CardInfo getValidUser(){
-        return new CardInfo("1111 2222 3333 4444",getValidMonth(),getValidYear(),getValidName(),getCVV());
+        return new CardInfo("1111 2222 3333 4444",getValidMonth(1),getValidYear(),getValidName(),getCVV());
     }
 
     public static CardInfo getInvalidUser(){
         return new CardInfo("5555 6666 7777 8888",getInvalidMonth(),getInvalidYear(),getInvalidName(),getCVV());
     }
     public static CardInfo getIncorrectCardNumber(){
-        return new CardInfo("1111 2222 3333 4445",getValidMonth(),getValidYear(),getValidName(),getCVV());
+        return new CardInfo("1111 2222 3333 4445",getValidMonth(6),getValidYear(),getValidName(),getCVV());
     }
 
     public static CardInfo getWrongMonth(){
@@ -84,6 +86,6 @@ public class DataHelper {
     }
 
     public static CardInfo getWrongYear(){
-        return new CardInfo("1111 2222 3333 4444",getValidMonth(),getInvalidYear(),getValidName(),getCVV());
+        return new CardInfo("1111 2222 3333 4444",getValidMonth(12),getInvalidYear(),getValidName(),getCVV());
     }
 }
