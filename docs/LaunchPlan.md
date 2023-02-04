@@ -2,7 +2,7 @@
 Дипломный проект — автоматизация тестирования комплексного сервиса, взаимодействующего с СУБД и API Банка.
 
 Процедура запуска автотестов
-Склонировать репозиторий: git clone https://github.com/TrandinaT/java_aqa_diploma.git
+Склонировать репозиторий: git clone https://github.com/TrandinaT/DiplomWork.git
 
 Перейти в папку java_aqa_diploma
 
